@@ -14,3 +14,21 @@ const fs = require('fs');
 
 const Emp = [];
 
+//Manager Prompt
+
+const addManager = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name : 'name',
+            message : 'Who is the manager of this team?,'
+
+        }
+    ])
+    .then
+        //console.log('sucess!');
+    
+}
+
+addManager();
+
