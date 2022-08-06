@@ -9,3 +9,8 @@ const Intern = require('./lib/Intern');
 //node modules
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+//Employee array
+
+const Emp = [];
+
