@@ -20,33 +20,38 @@ const addManager = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name : 'managername',
-            message : 'Who is the manager of this team?',
+            name: 'managername',
+            message: 'Who is the manager of this team?',
 
         },
         {
-            
+
             type: 'input',
-            name : 'managerID',
-            message : 'Please enter the manager ID.',
+            name: 'managerID',
+            message: 'Please enter the manager ID.',
         },
 
         {
-            
+
             type: 'input',
-            name : 'manageremail',
-            message : 'Please enter the manager email.',
+            name: 'manageremail',
+            message: 'Please enter the manager email.',
         },
 
         {
-            
-                type: 'input',
-                name : 'managerofcnum',
-                message : 'Please enter the manager office number.',
-            },
-        
+
+            type: 'input',
+            name: 'managerofcnum',
+            message: 'Please enter the manager office number.',
+        },
+
     ])
-    
-}
+    .then(managerInput => {
+        const{managername,managerid,manageremail,managerofcnum} = managerInput;
+        const manager = new Manager(managername,managerid,manageremail,managerofcnum);
+        Emp.push(manager)
+        console.log(manager);
+    })
+};
 addManager();
 
