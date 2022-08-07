@@ -68,6 +68,21 @@ const addEmployee =() =>{
             message: "Please choose your employee's role",
             choices : ['Engineer','Intern']
 
+        },
+        {
+            type: 'input',
+            name : 'name',
+            message : "What's the name of the employee?",
+        },
+        {
+           type : 'input',
+           name: 'email',
+           message : "Please enter the employee's email.", 
+        },
+        {
+            type : 'input',
+            name : 'github',
+            message : "Please enter the employee's github username.",
         }
     ])
 }
