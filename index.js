@@ -9,6 +9,7 @@ const Intern = require('./lib/Intern');
 //node modules
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Employee = require('./lib/Employee');
 
 //Employee array
 
@@ -96,6 +97,17 @@ const addEmployee =() =>{
           default : false  
         }
     ])
+    .then(employeeData => {
+        //data for employee types
+
+        let{name,id,email,role,github,school,confirmAddEmployee} = employeeData;
+        let employee;
+
+        if(role === "Engineer"){
+            employee = new Engineer(name,id,email,github);
+            console.log(employee);
+        }
+    })
     
 }
 //addManager();
