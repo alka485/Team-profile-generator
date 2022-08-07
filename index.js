@@ -50,8 +50,27 @@ const addManager = () => {
         const{managername,managerID,manageremail,managerofcnum} = managerInput;
         const manager = new Manager(managername,managerID,manageremail,managerofcnum);
         Emp.push(manager)
-        console.log(manager);
+        //console.log(manager);
     })
 };
-addManager();
+
+const addEmployee =() =>{
+    console.log(`
+    ===============
+    Adding employees to the team
+    ===============
+    `);
+
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name : 'role',
+            message: "Please choose your employee's role",
+            choices : ['Engineer','Intern']
+
+        }
+    ])
+}
+//addManager();
+addEmployee();
 
