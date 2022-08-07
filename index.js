@@ -47,8 +47,8 @@ const addManager = () => {
 
     ])
     .then(managerInput => {
-        const{managername,managerid,manageremail,managerofcnum} = managerInput;
-        const manager = new Manager(managername,managerid,manageremail,managerofcnum);
+        const{managername,managerID,manageremail,managerofcnum} = managerInput;
+        const manager = new Manager(managername,managerID,manageremail,managerofcnum);
         Emp.push(manager)
         console.log(manager);
     })
