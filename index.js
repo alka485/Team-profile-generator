@@ -106,10 +106,23 @@ const addEmployee =() =>{
         if(role === "Engineer"){
             employee = new Engineer(name,id,email,github);
             console.log(employee);
+        } 
+        else if(role ==="Intern"){
+            employee = new Intern(name,id,email,github);
+            console.log(employee);
+        }
+        Emp.push(employee);
+
+        if (confirmAddEmployee) 
+        {
+              return addEmployee(Emp);    
+        } else {
+            return Emp;
+            
         }
     })
     
-}
+};
 //addManager();
 addEmployee();
 
