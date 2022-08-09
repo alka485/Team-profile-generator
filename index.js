@@ -56,12 +56,7 @@ const addManager = () => {
 };
 
 const addEmployee =() =>{
-    console.log(`
-    ===============
-    Adding employees to the team
-    ===============
-    `);
-
+   
     return inquirer.prompt([
         {
             type: 'list',
@@ -69,71 +64,75 @@ const addEmployee =() =>{
             message: "Please choose your employee's role",
             choices : ['Engineer','Intern']
 
-        },
-        {
-            type: 'input',
-            name : 'name',
-            message : "What's the name of the Engineer?",
-        },
-        {
-           type : 'input',
-           name: 'email',
-           message : "Please enter the engineer's email.", 
-        },
-        {
-            type : 'input',
-            name : 'github',
-            message : "Please enter the engineer's github username.",
-        },
-        {
-          type:'confirm',
-          name : 'confirmAddEmployee',
-          message : 'Would you like to add more team members?',
-          default : false  
-        },
-
-        {
-            type: 'input',
-            name : 'name',
-            message : "What's the name of the intern?",
-        },
-        {
-           type : 'input',
-           name: 'email',
-           message : "Please enter the intern's email.", 
-        },
-        {
-            type: 'input',
-            name : 'school',
-            message: " Please enter the intern's school",
         }
-    ])
-    .then(employeeData => {
-        //data for employee types
 
-        let{name,id,email,role,github,school,confirmAddEmployee} = employeeData;
-        let employee;
+        
 
-        if(role === "Engineer"){
-            employee = new Engineer(name,id,email,github);
-            console.log(employee);
-        } 
-        else if(role ==="Intern"){
-            employee = new Intern(name,id,email,github);
-            console.log(employee);
-        }
-        Emp.push(employee);
+//         {
+//             type: 'input',
+//             name : 'name',
+//             message : "What's the name of the Engineer?",
+//         },
+//         {
+//            type : 'input',
+//            name: 'email',
+//            message : "Please enter the engineer's email.", 
+//         },
+//         {
+//             type : 'input',
+//             name : 'github',
+//             message : "Please enter the engineer's github username.",
+//         },
+//         {
+//           type:'confirm',
+//           name : 'confirmAddEmployee',
+//           message : 'Would you like to add more team members?',
+//           default : false  
+//         },
 
-        if (confirmAddEmployee) 
-        {
-              return addEmployee(Emp);    
-        } else {
-            return Emp;
+//         {
+//             type: 'input',
+//             name : 'name',
+//             message : "What's the name of the intern?",
+//         },
+//         {
+//            type : 'input',
+//            name: 'email',
+//            message : "Please enter the intern's email.", 
+//         },
+//         {
+//             type: 'input',
+//             name : 'school',
+//             message: " Please enter the intern's school",
+//         }
+     ])
+     
+//     .then(employeeData => {
+//         //data for employee types
+
+//         let{name,id,email,role,github,school,confirmAddEmployee} = employeeData;
+//         let employee;
+
+//         if(role === "Engineer"){
+//             employee = new Engineer(name,id,email,github);
+//             console.log(employee);
+//         } 
+//         else if(role ==="Intern"){
+//             employee = new Intern(name,id,email,github);
+//             console.log(employee);
+//         }
+//         Emp.push(employee);
+
+//         if (confirmAddEmployee) 
+//         {
+//               return addEmployee(Emp);    
+//         } else {
+//             return Emp;
             
-        }
-    })
+//         }
+   // });
     
-};
+ };
 //addManager();
 //addEmployee();
 
@@ -152,5 +151,10 @@ addManager()
 .then(Emp => {
     return PageTemplate(Emp);
 })
-
+.then(pageHTML =>{
+    return writeFile(pageHTML);
+})
+.catch(err => {
+    console.log(err);
+});
 
