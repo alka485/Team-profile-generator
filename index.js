@@ -73,28 +73,39 @@ const addEmployee =() =>{
         {
             type: 'input',
             name : 'name',
-            message : "What's the name of the employee?",
+            message : "What's the name of the Engineer?",
         },
         {
            type : 'input',
            name: 'email',
-           message : "Please enter the employee's email.", 
+           message : "Please enter the engineer's email.", 
         },
         {
             type : 'input',
             name : 'github',
-            message : "Please enter the employee's github username.",
-        },
-        {
-            type: 'input',
-            name : 'school',
-            message: " Please enter the intern's school",
+            message : "Please enter the engineer's github username.",
         },
         {
           type:'confirm',
           name : 'confirmAddEmployee',
           message : 'Would you like to add more team members?',
           default : false  
+        },
+
+        {
+            type: 'input',
+            name : 'name',
+            message : "What's the name of the intern?",
+        },
+        {
+           type : 'input',
+           name: 'email',
+           message : "Please enter the intern's email.", 
+        },
+        {
+            type: 'input',
+            name : 'school',
+            message: " Please enter the intern's school",
         }
     ])
     .then(employeeData => {
@@ -124,5 +135,22 @@ const addEmployee =() =>{
     
 };
 //addManager();
-addEmployee();
+//addEmployee();
+
+const writeFile = data => {
+    fs.writeFile('./dist/index.html',data,err =>{
+        if(err){
+            console.log(err);
+            return;
+        } else {
+            console.log("success")
+        }
+    })
+};
+addManager()
+.then(addEmployee)
+.then(Emp => {
+    return PageTemplate(Emp);
+})
+
 
