@@ -51,6 +51,7 @@ const addManager = () => {
         const{managername,managerID,manageremail,managerofcnum} = managerInput;
         const manager = new Manager(managername,managerID,manageremail,managerofcnum);
         Emp.push(manager)
+      
         //console.log(manager);
     })
 };
@@ -62,9 +63,8 @@ const addEmployee =() =>{
             type: 'list',
             name : 'role',
             message: "Please choose your employee's role",
-            choices : ['Engineer','Intern']
-
-        }
+            choices : ['Engineer','Intern','No more team members are needed']
+     }
 
         
 
@@ -105,7 +105,20 @@ const addEmployee =() =>{
 //             name : 'school',
 //             message: " Please enter the intern's school",
 //         }
-     ])
+     ]).then(employeeData => {
+        switch (employeeData.role) {
+            case "Engineer":
+                addEngineer();
+                
+                break;
+            case "Intern":
+                addIntern();    
+        
+            default:
+                htmlBuilder();
+                break;
+        }
+     })
      
 //     .then(employeeData => {
 //         //data for employee types
@@ -133,28 +146,28 @@ const addEmployee =() =>{
    // });
     
  };
-//addManager();
-//addEmployee();
+// //addManager();
+// //addEmployee();
 
-const writeFile = data => {
-    fs.writeFile('./dist/index.html',data,err =>{
-        if(err){
-            console.log(err);
-            return;
-        } else {
-            console.log("success")
-        }
-    })
-};
-addManager()
-.then(addEmployee)
-.then(Emp => {
-    return PageTemplate(Emp);
-})
-.then(pageHTML =>{
-    return writeFile(pageHTML);
-})
-.catch(err => {
-    console.log(err);
-});
+// const writeFile = data => {
+//     fs.writeFile('./dist/index.html',data,err =>{
+//         if(err){
+//             console.log(err);
+//             return;
+//         } else {
+//             console.log("success")
+//         }
+//     })
+// };
+// addManager()
+// .then(addEmployee)
+// .then(Emp => {
+//     return PageTemplate(Emp);
+// })
+// .then(pageHTML =>{
+//     return writeFile(pageHTML);
+// })
+// .catch(err => {
+//     console.log(err);
+// });
 
