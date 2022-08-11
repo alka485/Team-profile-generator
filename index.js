@@ -72,7 +72,8 @@ const addEmployee =() =>{
                 
                 break;
             case "Intern":
-                addIntern();    
+                addIntern(); 
+                break;   
         
             default:
                 htmlBuilder();
@@ -134,7 +135,7 @@ const addEmployee =() =>{
         {
             type : 'input',
             name : 'school',
-            message : "What school does the intern attend",
+            message : "What school does the intern attend ?",
         }
         ]).then(internData =>{
             const intern = new Intern(internData.name,internData.email,internData.id,internData.school);
@@ -144,6 +145,20 @@ const addEmployee =() =>{
         })
 
      }
+       
+     
+     const htmlBuilder = ()=> {
+                fs.writeFile('./dist/index.html','utf-8',(err) =>{
+                    if(err){
+                        console.log(err);
+                        return;
+                    } else {
+                        console.log("TeamCreated")
+                    }
+                })
+            };
+            
+            
 
 
      addManager();
