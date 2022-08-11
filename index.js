@@ -51,10 +51,11 @@ const addManager = () => {
         const{managername,managerID,manageremail,managerofcnum} = managerInput;
         const manager = new Manager(managername,managerID,manageremail,managerofcnum);
         Emp.push(manager)
+        addEmployee();
       
         //console.log(manager);
-    })
-};
+    });
+}
 
 const addEmployee =() =>{
    
@@ -64,48 +65,7 @@ const addEmployee =() =>{
             name : 'role',
             message: "Please choose your employee's role",
             choices : ['Engineer','Intern','No more team members are needed']
-     }
-
-        
-
-//         {
-//             type: 'input',
-//             name : 'name',
-//             message : "What's the name of the Engineer?",
-//         },
-//         {
-//            type : 'input',
-//            name: 'email',
-//            message : "Please enter the engineer's email.", 
-//         },
-//         {
-//             type : 'input',
-//             name : 'github',
-//             message : "Please enter the engineer's github username.",
-//         },
-//         {
-//           type:'confirm',
-//           name : 'confirmAddEmployee',
-//           message : 'Would you like to add more team members?',
-//           default : false  
-//         },
-
-//         {
-//             type: 'input',
-//             name : 'name',
-//             message : "What's the name of the intern?",
-//         },
-//         {
-//            type : 'input',
-//            name: 'email',
-//            message : "Please enter the intern's email.", 
-//         },
-//         {
-//             type: 'input',
-//             name : 'school',
-//             message: " Please enter the intern's school",
-//         }
-     ]).then(employeeData => {
+     } ]).then(employeeData => {
         switch (employeeData.role) {
             case "Engineer":
                 addEngineer();
@@ -119,6 +79,75 @@ const addEmployee =() =>{
                 break;
         }
      })
+    }
+
+     const addEngineer =() =>{
+        return inquirer.prompt([
+            
+        {
+            type: 'input',
+            name : 'name',
+            message : "What's the name of the Engineer?",
+        },
+        {
+           type : 'input',
+           name: 'email',
+           message : "Please enter the engineer's email.", 
+        },
+        {
+            type : 'input',
+            name: 'id',
+            message : "Please enter the engineer's ID.", 
+         },
+        {
+            type : 'input',
+            name : 'github',
+            message : "Please enter the engineer's github username.",
+        }
+        ]).then(engineerData =>{
+            const engineer = new Engineer(engineerData.name,engineerData.id,engineerData.email,engineerData.github);
+            Emp.push(engineer);
+            addEmployee();
+
+        })
+
+     }
+
+     const addIntern =() =>{
+        return inquirer.prompt([
+            
+        {
+            type: 'input',
+            name : 'name',
+            message : "What's the name of the Intern?",
+        },
+        {
+           type : 'input',
+           name: 'email',
+           message : "Please enter the intern's email address.", 
+        },
+        {
+            type : 'input',
+            name: 'id',
+            message : "Please enter the intern's ID.", 
+         },
+        {
+            type : 'input',
+            name : 'school',
+            message : "What school does the intern attend",
+        }
+        ]).then(internData =>{
+            const intern = new Intern(internData.name,internData.email,internData.id,internData.school);
+            Emp.push(intern);
+            addEmployee();
+
+        })
+
+     }
+
+
+     addManager();
+     //addEmployee();
      
 //     .then(employeeData => {
 //         //data for employee types
@@ -145,7 +174,7 @@ const addEmployee =() =>{
 //         }
    // });
     
- };
+ 
 // //addManager();
 // //addEmployee();
 
