@@ -147,71 +147,31 @@ const addEmployee =() =>{
      }
        
      
-     const htmlBuilder = ()=> {
-                fs.writeFile('./dist/index.html','utf-8',(err) =>{
+     function htmlBuilder () {
+        console.log("success");
+
+           const writeFile=data =>{
+            fs.writeFile('./dist/index.html',data,err) 
                     if(err){
                         console.log(err);
                         return;
                     } else {
                         console.log("TeamCreated")
                     }
-                })
-            };
+                }
+            }   
             
             
-
-
-     addManager();
-     //addEmployee();
-     
-//     .then(employeeData => {
-//         //data for employee types
-
-//         let{name,id,email,role,github,school,confirmAddEmployee} = employeeData;
-//         let employee;
-
-//         if(role === "Engineer"){
-//             employee = new Engineer(name,id,email,github);
-//             console.log(employee);
-//         } 
-//         else if(role ==="Intern"){
-//             employee = new Intern(name,id,email,github);
-//             console.log(employee);
-//         }
-//         Emp.push(employee);
-
-//         if (confirmAddEmployee) 
-//         {
-//               return addEmployee(Emp);    
-//         } else {
-//             return Emp;
-            
-//         }
-   // });
-    
- 
-// //addManager();
-// //addEmployee();
-
-// const writeFile = data => {
-//     fs.writeFile('./dist/index.html',data,err =>{
-//         if(err){
-//             console.log(err);
-//             return;
-//         } else {
-//             console.log("success")
-//         }
-//     })
-// };
-// addManager()
-// .then(addEmployee)
-// .then(Emp => {
-//     return PageTemplate(Emp);
-// })
-// .then(pageHTML =>{
-//     return writeFile(pageHTML);
-// })
-// .catch(err => {
-//     console.log(err);
-// });
-
+  addManager()
+  .then(Emp =>{
+    return PageTemplate(Emp);
+  })
+   .then(pageHTML=>{
+    return PageTemplate(Emp);
+   }) 
+.then(pageHTML => {
+    return writeFile(pageHTML);
+})
+.catch(err =>{
+    console.log(err);
+});
