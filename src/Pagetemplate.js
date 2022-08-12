@@ -73,9 +73,12 @@ PageTemplate = (data) =>{
             const internCard = generateIntern(employee);
             pageArray.push(internCard);
         }
-
-
     }
+
+    const employeeCards = pageArray.join('')
+    const generateTeam = generateTeamPage(employeeCards);
+    return generateTeam;
+
 }
 
 
