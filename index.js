@@ -1,5 +1,5 @@
 // link to page creation
-const PageTemplate = require('./src/Pagetemplate');
+const PageTemplate = require('./src/PageTemplate');
 
 //team profiles
 const Manager = require('./lib/Manager');
@@ -163,15 +163,4 @@ const addEmployee =() =>{
             
             
   addManager()
-  .then(Emp =>{
-    return PageTemplate(Emp);
-  })
-   .then(pageHTML=>{
-    return PageTemplate(Emp);
-   }) 
-.then(pageHTML => {
-    return writeFile(pageHTML);
-})
-.catch(err =>{
-    console.log(err);
-});
+  
