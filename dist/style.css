@@ -1,6 +1,20 @@
-header{
-    background-color:#AB1248 ;
-    color: #fff;
-    text-align: center;
-    
+*{
+    box-sizing: border-box;
 }
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --primary : lightslategray;
+    --secondary : white;
+    --tertiary:  #D81233;
+}
+
+/* #navbar{
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    font-size: 50px;
+
+} */
