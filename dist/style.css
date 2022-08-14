@@ -22,3 +22,14 @@ body{
     background-color: var(--primary);
     color: var(--secondary);
 }
+
+.card-body{
+    background-color: var(--secondary);
+    
+}
+
+.container{
+    margin: 100px auto;
+    justify-content: space-evenly;
+    display: flex;
+}
