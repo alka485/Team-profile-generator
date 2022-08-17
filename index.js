@@ -148,8 +148,8 @@ const addIntern = () => {
 
 
 function htmlBuilder() {
-    console.log("success");
-    console.log(Emp);
+    //console.log("success");
+    //console.log(Emp);
    var html = `
    <!DOCTYPE html>
    <html lang="en">
