@@ -11,7 +11,7 @@ test('gets intern school', () =>
  {
     const intern = new Intern('Alka',23,'alkasah485@gmail.com','alka485','UW');
 
-    expect(intern.getSchool()).toEqual(expect.StringContaining(intern.school.toString()));
+    expect(intern.getSchool()).toEqual (intern.school.toString());
 });
 
 test('gets role of employee', () => {

@@ -10,7 +10,7 @@ test('gets engineer github value', () =>
  {
     const engineer = new Engineer('Alka',23,'alkasah485@gmail.com','alka485');
 
-    expect(engineer.getGithub()).toEqual(expect.StringContaining(engineer.github.toString()));
+    expect(engineer.getGithub()).toEqual(engineer.github.toString());
 });
 
 test('gets role of employee', () => {
