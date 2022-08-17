@@ -4,6 +4,8 @@
 
 The Team Profile Generator is a command-line-input application run in Node that requests information from the user about members of an engineering team and generates an HTML file displaying that information. Before running the application the user must perform an npm install to install all required dependencies.
 
+Upon launching the app user is asked to enter the name, mail, id and officenumber of their manager. After that the user is asked to select other team member from a list(options include "Engineer","Intern"),enters the member's email address, and then must enter another piece of information that will differ depending on what role was selected. If "Engineer" was selected, the app asks the user for the team member's GitHub username; if "Intern" was selected, the member's school is requested.
+
 
 
 ## Your Task
