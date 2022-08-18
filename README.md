@@ -13,6 +13,14 @@ When all information on the team member has been entered, the user is asked whet
 
 ![screenshot](./Assets/Team%20Profile.png)
 
+# Video of running application
+
+https://drive.google.com/file/d/1CA4Q5bJD472O_6RYyhgRv-fBlU7WVPlD/view
+
+https://drive.google.com/file/d/18YoWwndBOEi2OdP8QCzIVp5cagkwCIOI/view
+
+https://drive.google.com/file/d/1LB0nZUZzNR_2Hs4Qw-E3ip4tnwaHcIUe/view
+
 ## Techniques and Technologies Used
 
 This app was created using Object-Oriented Programming concepts, namely using classes and constructors to create "team member" objects based on information entered by the user. The app is run using Node.js, and uses the "Inquirer". Files for different objects are also stored in separate .js files and passed among one another using module.exports and require.
