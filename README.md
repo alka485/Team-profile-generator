@@ -15,11 +15,7 @@ When all information on the team member has been entered, the user is asked whet
 
 # Video of running application
 
-https://drive.google.com/file/d/1CA4Q5bJD472O_6RYyhgRv-fBlU7WVPlD/view
-
-https://drive.google.com/file/d/18YoWwndBOEi2OdP8QCzIVp5cagkwCIOI/view
-
-https://drive.google.com/file/d/1LB0nZUZzNR_2Hs4Qw-E3ip4tnwaHcIUe/view
+https://drive.google.com/file/d/12RUuO5ngYswSnTC9Ts_MrSaPtGdJh1UP/view
 
 ## Techniques and Technologies Used
 
